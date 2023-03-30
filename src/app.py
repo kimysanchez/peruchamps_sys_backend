@@ -64,6 +64,7 @@ def listarChamps():
             "champs": champs,
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -71,6 +72,7 @@ def listarChamps():
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -100,6 +102,7 @@ def listarIntervenciones(idChamp):
             "intervenciones": intervenciones,
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -108,6 +111,7 @@ def listarIntervenciones(idChamp):
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -160,6 +164,7 @@ def listarChampsPsicologo(psicologo):
             "champs": champs,
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -167,6 +172,7 @@ def listarChampsPsicologo(psicologo):
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -181,6 +187,7 @@ def insertarChamp():
             "champ": request.json,
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -188,6 +195,7 @@ def insertarChamp():
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -203,6 +211,7 @@ def insertarIntervencion(idChamp):
             "intervencion": request.json,
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -211,6 +220,7 @@ def insertarIntervencion(idChamp):
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -228,6 +238,7 @@ def eliminarIntervencion(idIntervencion):
             "mensaje": "Intervención eliminada",
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -236,6 +247,7 @@ def eliminarIntervencion(idIntervencion):
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
@@ -252,6 +264,7 @@ def editarIntervencion(idIntervencion):
             "mensaje": "Intervención editada",
             "status": 200
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     except Exception as ex:
         response = jsonify({
@@ -260,6 +273,7 @@ def editarIntervencion(idIntervencion):
             "status": 400,
             "error": ex.args
         })
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
 
