@@ -204,7 +204,7 @@ def insertarChamp():
 @app.route('/insertarIntervencion/<idChamp>', methods=['POST'])
 def insertarIntervencion(idChamp):
     try:
-        sql = "INSERT INTO intervencion (idIntervencion, fecha, motivo1, motivo2, informacion, acuerdo, idChamp) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', {5});".format(request.json['fecha'], request.json['motivo1'], request.json['motivo2'], request.json['informacion'], request.json['acuerdo'], idChamp)
+        sql = "INSERT INTO intervencion (idIntervencion, fecha, motivo1, motivo2, informacion, acuerdo, idChamp, psicologo) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', {5}, '{6}');".format(request.json['fecha'], request.json['motivo1'], request.json['motivo2'], request.json['informacion'], request.json['acuerdo'], idChamp, request.json['psicologo'])
         cursor = mysql.connection.cursor()
         cursor.execute(sql)
         mysql.connection.commit()
