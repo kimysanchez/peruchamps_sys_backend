@@ -218,9 +218,9 @@ def insertarIntervencion(idChamp):
     except Exception as ex:
         response = jsonify({
             "champ": idChamp,
-            "intervencion": "Error",
+            "intervencion": request.json,
             "status": 400,
-            "error": ex.args
+            "error": ex
         })
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
