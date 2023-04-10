@@ -65,6 +65,7 @@ def listarChamps():
             "status": 200
         })
         response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Credentials', true)
         return response
     except Exception as ex:
         response = jsonify({
