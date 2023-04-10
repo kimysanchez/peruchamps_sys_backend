@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 #CONEXIÓN MYSQL
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['MYSQL_HOST'] = '192.185.45.198'
 app.config['MYSQL_USER'] = 'champs17_sys'
 app.config['MYSQL_PASSWORD'] = 'nG=;$0p8bwdr'
@@ -284,5 +285,4 @@ def pagina_no_encontrada(error):
 
 if __name__ == "__main__":
     app.register_error_handler(404,pagina_no_encontrada)
-    CORS(app)
     app.run(debug=True)
