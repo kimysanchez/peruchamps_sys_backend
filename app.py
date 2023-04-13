@@ -257,7 +257,7 @@ def eliminarIntervencion(idIntervencion):
 @app.route('/editarIntervencion/<idIntervencion>', methods=['PUT'])
 def editarIntervencion(idIntervencion):
     try:
-        sql = "UPDATE intervencion SET fecha = '{0}', motivo1 = '{1}', motivo2 = '{2}', informacion = '{3}', acuerdo = '{4}' WHERE idIntervencion = '{5}'".format(request.json['fecha'], request.json['motivo1'], request.json['motivo2'], request.json['informacion'], request.json['acuerdo'], idIntervencion)
+        sql = "UPDATE intervencion SET fecha = '{0}', motivo1 = '{1}', motivo2 = '{2}', informacion = '{3}', acuerdo = '{4}', psicologo = '{5}' WHERE idIntervencion = '{6}'".format(request.json['fecha'], request.json['motivo1'], request.json['motivo2'], request.json['informacion'], request.json['acuerdo'], request.json['psicologo'], idIntervencion)
         cursor = mysql.connection.cursor()
         cursor.execute(sql)
         mysql.connection.commit()
