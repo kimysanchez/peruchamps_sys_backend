@@ -57,7 +57,8 @@ def listarChamps():
                 'descripcionCaso': dato[27],
                 'protocolo': dato[28],
                 'nivelRiesgo': dato[29],
-                'psicologo': dato[30]
+                'psicologo': dato[30],
+                'linkCC': dato[31]
             }
             champs.append(champ)
 
@@ -180,7 +181,8 @@ def listarChampsPsicologo(psicologo):
                 'descripcionCaso': dato[27],
                 'protocolo': dato[28],
                 'nivelRiesgo': dato[29],
-                'psicologo': dato[30]
+                'psicologo': dato[30],
+                'linkCC': dato[31]
             }
             champs.append(champ)
 
