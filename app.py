@@ -116,6 +116,28 @@ def listarIntervenciones(idChamp):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
+@app.route('/editarSeguimiento/<idChamp>', methods=['PUT'])
+def editarSeguimiento(idChamp):
+    try:
+        sql = "UPDATE champ SET riesgoAcademico = '{0}', riesgoEmocional = '{1}', nivelRiesgo = '{2}', protocolo = '{3}', descripcionCaso = '{4}' WHERE idChamp = {5};".format(request.json['riesgoAcademico'], request.json['riesgoEmocional'], request.json['nivelRiesgo'], request.json['protocolo'], request.json['descripcionCaso'], idChamp)
+        cursor = mysql.connection.cursor()
+        cursor.execute(sql)
+        mysql.connection.commit()
+        response = jsonify({
+            "champ": idChamp,
+            "mensaje": "Seguimiento editado",
+            "status": 200
+        })
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    except Exception as ex:
+        response = jsonify({
+            "champ": idChamp,
+            "mensaje": "Error",
+            "status": 400
+        })
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return 
 
 @app.route('/listarChamps/<psicologo>', methods=['GET'])
 def listarChampsPsicologo(psicologo):
